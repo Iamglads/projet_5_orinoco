@@ -1,0 +1,137 @@
+$main-color:rgb(243, 233, 241);
+$second-color: rgb(143, 95, 250);
+$third-color: rgb(203, 125, 85);
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $main-color;
+}
+p {
+    font-family: "Open Sans", sans-serif;
+  }
+
+
+a {
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+.main__nav{
+    padding-right: 2em;
+    display: flex;
+    justify-content: flex-end;
+}
+.fa-shopping-cart{
+    color: $third-color;
+    font-size: 1.5em;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.logo {
+  width: auto;
+  height: 70px;
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  background: linear-gradient(to right, $third-color, $second-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.slider-bloc {
+  width: 100%;
+  height: 350px;
+  background-color: #fff;
+}
+
+.img-slide {
+  width: 100%;
+  height: 350px;
+}
+/*______SECTION PRODUITS_______*/
+.section__products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products-list{
+    padding: 1em;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    @media screen and(max-width: 599px){
+        display: block;
+    }
+}
+.products-img{
+    margin-right: 20px;
+}
+.img-cameras{
+    width: 300px;
+    height: auto;
+    box-shadow: 1px 1px 4px 1px grey;
+    border-radius: 5px;
+}
+
+.btn{
+    border: 1px solid $third-color;
+    padding: 0.6em;
+    background-color: $main-color;
+    border-radius: 20px;
+    color: $third-color;
+    cursor: pointer;
+}
+/*______END SECTION PRODUITS_______*/
+
+footer {
+  box-shadow: 1px 0 3px 0 grey;
+  li {
+      font-size: 14px;
+      font-family: "Open Sans", sans-serif;
+      color: $third-color;
+    cursor: pointer;
+  }
+  p {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .icons-medias {
+    display: flex;
+    justify-content: space-between;
+    li {
+      padding: 1em;
+
+    }
+  }
+}
+
+.footer__div {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

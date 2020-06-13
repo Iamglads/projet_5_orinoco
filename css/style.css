@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3e9f1;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+.main__nav {
+  padding-right: 2em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-shopping-cart {
+  color: #cb7d55;
+  font-size: 1.5em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.logo {
+  width: auto;
+  height: 70px;
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  background: linear-gradient(to right, #cb7d55, #8f5ffa);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.slider-bloc {
+  width: 100%;
+  height: 350px;
+  background-color: #fff;
+}
+
+.img-slide {
+  width: 100%;
+  height: 350px;
+}
+
+/*______SECTION PRODUITS_______*/
+.section__products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-list {
+  padding: 1em;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+@media screen and (max-width: 599px) {
+  .products-list {
+    display: block;
+  }
+}
+
+.products-img {
+  margin-right: 20px;
+}
+
+.img-cameras {
+  width: 300px;
+  height: auto;
+  box-shadow: 1px 1px 4px 1px grey;
+  border-radius: 5px;
+}
+
+.btn {
+  border: 1px solid #cb7d55;
+  padding: 0.6em;
+  background-color: #f3e9f1;
+  border-radius: 20px;
+  color: #cb7d55;
+  cursor: pointer;
+}
+
+/*______END SECTION PRODUITS_______*/
+footer {
+  box-shadow: 1px 0 3px 0 grey;
+}
+footer li {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: #cb7d55;
+  cursor: pointer;
+}
+footer p {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+footer .icons-medias {
+  display: flex;
+  justify-content: space-between;
+}
+footer .icons-medias li {
+  padding: 1em;
+}
+
+.footer__div {
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
