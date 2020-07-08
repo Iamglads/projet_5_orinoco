@@ -1,0 +1,34 @@
+/*______NAV_______*/
+.menu-nav{
+    background-color: $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .logo {
+      width: auto;
+      height: 70px;
+      @media screen and(max-width: 599px) {
+        height: 50px;
+      }
+    }
+  }
+  .logo {
+    width: auto;
+    height: 60px;
+    cursor: pointer;
+  }
+  .nav-link{
+    display: flex;
+    align-items: center;
+    li{
+      padding: 1em;
+    }
+  }
+  
+  .fa-cart-plus {
+    color: $second-color;
+    padding: .7em;
+    background-color: white;
+    border-radius: 100%;
+  }
+  /*______NAV END_______*/

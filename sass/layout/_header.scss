@@ -1,0 +1,14 @@
+/*______HEADER_______*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  
+    .header-bloc {
+      width: 100%;
+      height: 350px;
+      background-image: url(/images/vintage_camera.jpg);
+    }
+  }
+  /*______HEADER END_______*/
