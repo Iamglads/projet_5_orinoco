@@ -1,2 +1,134 @@
-    <!--Contient un résumé des produits dans le panier, le prix total et un formulaire permettant de passer
-    une commande, les données du formulaire doivent être correctes et bien formatées avant d'être renvoyées au backend-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@300&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <!-- CSS-->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Accueil | Votre panier</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light menu-nav ">
+        <img src="/images/orinoco.png" alt="logo_orinoco" class="logo">
+        <ul class="nav-link">
+            <li> <a href="index.html">Produits</a></li>
+            <li> <a href="contact.html">Contact</a></li>
+            <li><a href="panier.html"><i class="fas fa-cart-plus"></i></a></li>
+        </ul>
+
+    </nav>
+    <header>
+         <h1> Votre panier</h1>
+    </header>
+    <section class="section__productsInCart">
+        <div class="products__cart--list">
+           <p>Product here</p>
+        </div>
+        <!-- Total pannier-->
+        <div class="infos-cart">
+            <h4> Total <span class="cart-total">0</span>€</h4>
+            <button class="btn btn-clear-cart" type="button"> Effacer votre panier</button>
+        </div>
+    </section>
+    <section class=" container section__form">
+        <form action="" method="POST" class="form--cart">
+            <div>
+                <label for="surname">Nom</label>
+                <input type="text" id="surname" class="input" name="surname"  required placeholder="Ex: Dupont">
+            </div>
+            <div>
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" class="input" name="firstname"  required placeholder="Ex: Jean">
+            </div>
+            <div>
+                <label for="adress">Adresse</label>
+                <input type="text" id="adress" class="input" name="adress" placeholder="Ex: Rue Nelson Mandela" required>
+                <label for="adress">Complément d'adresse</label>
+                <input type="text" id="adress2" class="input" name="adress" placeholder="Complément" required>
+                <div>
+                    <input type="number" id="code" required placeholder="Code postale">
+                    <input type="text" id="city"  required placeholder="Ville" style="margin-left:24px;">
+                </div>
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="input" name="email"  required placeholder="Ex: contact@monsite.com">
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="page-footer font-small cyan darken-3">
+        <!-- Footer Elements -->
+        <div class="container">
+            <!-- Grid column -->
+            <div class="col-md-12 py-5 footer-icons">
+                <div class="mb-5 flex-center">
+                    <!-- Facebook -->
+                    <a class="fb-ic">
+                        <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a class="tw-ic">
+                        <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Pinterest-->
+                    <a class="pin-ic">
+                        <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+                    </a>
+                </div>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Footer Elements -->
+          <div class="footer-element">
+            <div>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <a href="#">Mentions légales</a>
+            </div>
+            <div>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2020 Copyright - <a href="#"> Orinoco</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer End -->
+    <script src="../main.js"></script>
+</body>
+
+</html>
