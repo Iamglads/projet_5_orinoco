@@ -3,99 +3,117 @@
     les produits dans l'index.html
     ----------------------------------------------------*/
 const url = "http://localhost:3000/api/cameras";
-const products = document.querySelector('.productsJs');
+const productsDOM = document.querySelector('.productsJs');
 
-// Execute when Dom loaded
-document.addEventListener("DOMContentLoaded", () => {
-    // we create a new instance of Products Class
-    const products = new Products();
-    products.getCamerasAsync();
-});
 
- class Products {
-    async getCamerasAsync() {
-        // récuperation de la ressource avec l'API fetch
-        // Nous attendons la résolution de la promesse avec await
-        let res = await fetch(url);
-        let cameras = await res.json()
-            // si la promesse est tenue
-            .then((cameras) => {
-                cameras.map((allCamera) => {
-                    let {
-                        _id,
-                        name,
-                        price,
-                        description,
-                        imageUrl
-                    } = allCamera;
-                    // nous recuperons les propriéte de notre objet que nous mettons dans notre ul
-                    products.innerHTML += `
-                    <li class="show-product">
-                        <div class="products-img">
-                            <img src="${imageUrl}" alt="image-${name}" class="img-cameras">
-                        </div>
-                        <div>
-                            <h2> ${name}</h2>
-                            <a href="produit.html?id=${_id} ">Personnaliser</a>
-                            <p> ${description}</p>
-                            <h3> ${price} €</h3>
-                            <button type="button" data-id="${_id}" class="btn btn-add-cart" data-id=${_id}> Ajouter au panier</button>
-                        </div>
-                    </li>`;
-                })
+const getRessource = async () => {
+    // récuperation de la ressource avec l'API fetch
+    const res = await fetch(url);
+    const cameras = await res.json()
+    return cameras
+}
 
-                return cameras;
+class Products {
+    getCameras() {
+        getRessource()
+            .then( (cameras) => {
+                this.displayCameras(cameras);
+            })
+            .then( (cameras) => {
+                this.saveCamerasInStorage(cameras)
             })
             // if promise is reject log error 
             .catch(error => { console.log(error) })
-
     }
-}
 
+    displayCameras(cameras) {
+        cameras.forEach((camera) => {
+            // nous recuperons les propriéte de notre objet que nous mettons dans notre ul
+            productsDOM.innerHTML += `
+        <li class="show-product">
+            <div class="products-img">
+                <img src="${camera.imageUrl}" alt="image-${camera.name}" class="img-cameras">
+            </div>
+            <div class="show-product-infos">
+                <h2> ${camera.name}</h2>
+                <a href="produit.html?id=${camera._id} ">Personnaliser</a>
+                <p> ${camera.description}</p>
+                <h3> ${camera.price} €</h3>
+                <button onclick="addToCart()" type="button" id="${camera._id}" class="btn add-to-cart">
+                    Ajouté au panier
+                    </button>
+            </div>
+        </li>`;
+        })
+    }
 
-
- /*---------------------------------------------------
-                ADD TO CART - LOCAL STORAGE
------------------------------------------------------*/
-let cart = [];
-let buttonsDOM = [];
-
-function addToCart() {
-    let btnAddToCart = document.querySelectorAll('.btn-add-cart');
-    buttonsDOM = btnAddToCart;
-
-
-        if (inCart) {
-            button.innerText = "Ajouté au panier";
-            button.disabled = true;
+        saveCamerasInStorage(cameras){
+            cameras.map((camera) => {
+                localStorage.setItem("camera", JSON.stringify(camera));
+            })
         }
 
-        button.addEventListener('click', () => {
-            console.log('Ajouté au panier')
-        })
-    // le produit est ajouter au panier, on alert "Ajouté au panier"
-
-    // produit est gardé dans la session storage
-    
-    // l'utilisateur reste sur la même page
 }
 
+    /*---------------------------------------------------
+                   ADD TO CART - LOCAL STORAGE
+    -----------------------------------------------------*/
+    const addToCart = () => {
+        // get all buttons 
+        const cartBtn = document.querySelectorAll('.add-to-cart');
+        let cart = {
+            'itemsCart': []
+        }
 
-//local storage
-class Storage {
-    static saveProducts(products) {
-      localStorage.setItem("products", JSON.stringify(products));
+        cartBtn.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                //console.log(event.target)
+                if (event.target.parentElement.classList.contains('show-product-infos')) {
+                    let id = btn.id;
+                    //let name = ;
+                    let items = {
+                        'id': id,
+                        'name': 'name',
+                        'price': 'price',
+                        'image': 'image'
+                    }
+                    cart.itemsCart.items = items;
+                    console.log(cart);
+
+                    localStorage.setItem('itemsCart', JSON.stringify(cart.itemsCart));
+                    let getItems = JSON.parse(localStorage.getItem(cart.itemsCart));
+
+                    console.log(getItems)
+                }
+            })
+        })
+
     }
-    static getProduct(id) {
-      let products = JSON.parse(localStorage.getItem("products"));
-      return products.find(product => product.id === id);
-    }
-    static saveCart(cart) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-    static getCart() {
-      return localStorage.getItem("cart")
-        ? JSON.parse(localStorage.getItem("cart"))
-        : [];
-    }
-  }
+
+
+
+
+    // Execute when Dom loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        // we create a new instance of Products Class
+        const products = new Products();
+        products.getCameras()
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
