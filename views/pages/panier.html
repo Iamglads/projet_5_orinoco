@@ -8,9 +8,13 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
@@ -27,47 +31,24 @@
         <ul class="nav-link">
             <li> <a href="index.html">Produits</a></li>
             <li> <a href="contact.html">Contact</a></li>
-            <li><a href="panier.html"><i class="fas fa-cart-plus"></i></a></li>
+            <div>
+                <a href="panier.html"><i class="fas fa-cart-plus"></i></a>
+                <span class="cart-items">0</span>
+            </div>
         </ul>
-
     </nav>
-    <div>
-        <a href="index.html"> <i class="fas fa-arrow-left"></i> Poursuivre Vos achats</a>
-    </div>
+    <header>
+        <h1> Panier</h1>
+    </header>
     <section class="section__productsInCart">
         <div class="products__cart--list">
             <!-- products in cart-->
-            <article class="show-product">
-                <div class="products-img">
-                    <img src="/images/vcam_1.jpg" alt="image-${name}" class="img-camera">
-                </div>
-                <div>
-                    <h3>NIKON 67543</h3>
-                </div>
-                <div>
-                    <label for="qry">Quantité</label>
-                    <select name="qty" id="qty">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <div>
-                    <h3> 12345 €</h3>
-                </div>
-                <div>
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-            </article>
         </div>
         <!-- Total pannier-->
     </section>
     <section class="section__infosCart">
         <div class="infos-cart">
             <div>
-
             </div>
             <div>
                 <button class="btn btn-clear-cart" type="button"> Vider le panier</button>
@@ -79,22 +60,23 @@
     </section>
     <!--form-->
     <section class="get-in-touch">
-        <form class="contact-form row">
+        <button class="btn btn-payment"> Paiement</button>
+        <form class="contact-form row displayForm">
             <div class="form-field col-lg-6">
                 <input id="name" class="input-text js-input" type="text" required>
                 <label class="label" for="name">Nom</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="firstname" class="input-text js-input" type="text" required>
-                <label class="label" for="email">Prénom</label>
+                <input id="firstName" class="input-text js-input" type="text" required>
+                <label class="label" for="firstName">Prénom</label>
             </div>
             <div class="form-field col-lg-6 ">
                 <input id="email" class="input-text js-input" type="email" required>
                 <label class="label" for="email">E-mail</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="tel" class="input-text js-input" type="tel" required>
-                <label class="label" for="tel">Téléphone</label>
+                <input id="phone" class="input-text js-input" type="tel" required>
+                <label class="label" for="phone">Téléphone</label>
             </div>
             <div class="form-field col-lg-12">
                 <input id="adress" class="input-text js-input" type="text" required>
@@ -105,8 +87,8 @@
                 <label class="label" for="city">Ville</label>
             </div>
             <div class="form-field col-lg-6 ">
-                <input id="cp" class="input-text js-input" type="number" required maxlength="5">
-                <label class="label" for="cp">Code postale</label>
+                <input id="postCard" class="input-text js-input" type="number" required maxlength="5">
+                <label class="label" for="postCard">Code postale</label>
             </div>
 
             <div class="form-field col-lg-12">
@@ -117,11 +99,13 @@
 
     <!-- Footer -->
     <footer class="page-footer font-small">
-
         <!-- Footer Elements -->
         <div class="footer-element col-md-12 py-2">
-            <div>
-                <a href="#">Contact</a>
+            <div class="footer-text">
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                </ul>
             </div>
             <div>
                 <!-- Facebook -->
@@ -150,12 +134,13 @@
         </div>
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>© 2020 Copyright - <a href="#"> Orinoco</a> - <a href="#">Mentions légales</a></p>
+            <p>© 2020 Copyright - <a href="#"> Orinoco</a></p>
         </div>
         <!-- Copyright -->
-
     </footer>
-    <script type="module" src="../main.js"></script>
+    <!-- Footer End -->
+    <script type="module" src="../js/cart.js"></script>
+    <script src="../js/productInCart.js"></script>
 </body>
 
 </html>
