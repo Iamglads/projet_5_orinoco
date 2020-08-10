@@ -1,16 +1,33 @@
 /*______FOOTER_______*/
-footer{
-
-  .footer-icons{
+footer {
+  box-shadow: 1px 1px 3px 1px grey;
+  .footer-icons {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .footer-element{
+  .footer-element {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    @media screen and(max-width: 599px) {
+      display: inline-block;
+      text-align: center;
+    }
+    .footer-text {
+      display: block;
+    }
+  }
+  .fab {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 10px;
+    margin-top: 20px;
   }
 }
 
-  /*______FOOTER END_______*/
+/*______FOOTER END_______*/

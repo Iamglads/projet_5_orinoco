@@ -28,7 +28,19 @@
   .fa-cart-plus {
     color: $second-color;
     padding: .7em;
-    background-color: white;
-    border-radius: 100%;
+    position: absolute;
+    &:hover{
+      box-shadow: 1px 1px 4px 1px rgb(175, 175, 175);
+      border-radius: 100%;
+    }
+  }
+  .cart-items{
+    color: $third-color;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    top: -5px;
+    left: 18px;
   }
   /*______NAV END_______*/

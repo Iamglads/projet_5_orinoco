@@ -1,5 +1,7 @@
 /*______HEADER_______*/
-header {
+.header {
+  background-image: url(/images/bg.jpg);
+  background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +10,9 @@ header {
     .header-bloc {
       width: 100%;
       height: 350px;
-      background-image: url(/images/vintage_camera.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
-  /*______HEADER END_______*/
+  /*______HEADER END_______*/ 

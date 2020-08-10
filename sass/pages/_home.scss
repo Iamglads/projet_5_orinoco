@@ -10,9 +10,8 @@
       margin-bottom: 30px;
       display: flex;
       align-items: center;
-      border-radius: 5px;
-      background-color: rgb(240, 228, 241);
-      border: 1px solid rgba(252, 248, 248, 0.5);
+      border-radius: 15px;
+      box-shadow: 1px 1px 1px 1px rgb(175, 175, 175);
       @media screen and(max-width: 900px) {
         display: block;
       }
@@ -30,18 +29,6 @@
           width: 100%;
         }
       }
-      .btn {
-        border: 1px solid $third-color;
-        padding: 0.6em;
-        background-color: $main-color;
-        border-radius: 10px;
-        color: $third-color;
-        cursor: pointer;
-        &:hover {
-          color: white;
-          background-color: $third-color;
-        }
-      }
     }
     @media screen and(max-width: 599px) {
       width: 100%;
@@ -52,17 +39,29 @@
 /*______END SECTION PRODUITS_______*/
 
 /*______NEWSLETTER_______*/
-.newsletter{
+.newsletter {
   width: 100%;
-  height: 400px;
+  height: 250px;
   display: flex;
   justify-content: center;
-  align-items: center;;
-  background-image: url(/images/vintage_camera.jpg);
+  align-items: center;
+  background-attachment: fixed;
   background-size: cover;
-  .btn-newsletter{
-    background-color: $third-color;
-    color: white;
+  .content {
+    display: flex;
+    justify-content: center;
+    .input-group {
+      display: block;
+      input {
+        border: none;
+        width: 400px;
+        margin-bottom: 50px;
+      }
+    }
+    .btn-newsletter {
+      background-color: $third-color;
+      color: white;
+    }
   }
 }
 /*______NEWSLETTER END_______*/
