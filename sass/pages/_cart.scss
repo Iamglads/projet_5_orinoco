@@ -11,13 +11,14 @@
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-      box-shadow: 1px 1px 4px 1px rgb(175, 175, 175);
+      box-shadow: 0 1px 1px 0 rgb(175, 175, 175);
       border-radius: 15px;
       padding: .5rem;
 
       .products-img {
         .img-camera {
-          height: 50px;
+          width: 150px;
+          height: auto;
           box-shadow: 1px 1px 5px 1px grey;
         }
       }
@@ -25,6 +26,10 @@
         color: rgb(151, 10, 10);
         cursor: pointer;
       }
+      h3{
+        font-size: 12px;
+      }
+     
     }
   }
  
@@ -63,6 +68,7 @@
   max-width: 600px;
   margin: 50px auto;
   position: relative;
+  padding: 1em;
 
 }
 
@@ -82,6 +88,7 @@ input{
   font-size: 18px;
   line-height: 20px;
   font-weight: 400;
+
 }
 .contact-form .input-text:focus {
   outline: none;
@@ -95,7 +102,7 @@ input{
   position: absolute;
   left: 20px;
   bottom: 11px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
   font-weight: 400;
   color: $third-color;
@@ -106,6 +113,13 @@ input{
   -webkit-transform .2s ease-in-out;
 }
 
+.requiredInput{
+  color:red;
+  }
 
+
+.displayForm{
+  display: none;
+}
 
 /*______CART END _______*/
