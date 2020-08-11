@@ -1,0 +1,16 @@
+// contact 
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    .btn{
+        color: #FFF;
+        margin-top: 50px;
+    }
+    input, textarea{
+        border: none;
+    }
+    input:focus{
+        border: 1px solid $third-color;
+    }
+}
