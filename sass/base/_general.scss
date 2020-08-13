@@ -1,0 +1,88 @@
+
+/*______GENERAL_______*/
+.footer-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: $main-color;
+  }
+  p {
+    font-family:'Times New Roman', Times, serif;
+  }
+  
+  a {
+    font-family:'Times New Roman', Times, serif;
+    color: unset;
+    cursor: pointer;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  h1 {
+    background: linear-gradient( #FFFFFF, #000000);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  h1, h2{
+    font-family: 'Helvetica';
+  }
+  h2{
+    color: $third-color;
+    font-size: 20px;
+  }
+  h3{
+    color: grey;
+  }
+  
+  label{
+    color: grey;
+    font-size: 12px;
+  }
+  
+  select,  #quantity{
+    width: 120px;
+    background-color: #FFF;
+    border: none;
+    padding: 0.2em;
+    color: $third-color;
+  }
+  
+  .fa-chevron-right .fa-chevron-left{
+    font-size: 40px;
+    color: $third-color;
+  }
+  
+  .fa-facebook-f:hover{
+    color: #3b5998;
+  }
+  .fa-instagram:hover{
+    color: #3f729b;
+  }
+  .fa-pinterest:hover{
+    color: #e60023;
+  }
+  .fa-twitter:hover{
+    color: #00ACEE;
+  }
+  
+  .empty-cart{
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .display-form{
+    display: none;
+  }
