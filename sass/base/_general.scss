@@ -1,11 +1,4 @@
 
-/*______GENERAL_______*/
-.footer-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   * {
     margin: 0;
     padding: 0;
@@ -13,6 +6,7 @@
   
   body {
     background-color: $main-color;
+    height: 100%;
   }
   p {
     font-family:'Times New Roman', Times, serif;
@@ -29,11 +23,13 @@
   }
   
   h1 {
-    background: linear-gradient( #FFFFFF, #000000);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    color: $third-color;;
     font-size: 3rem;
     text-align: center;
+    @include forMobile{
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
   }
   
   h1, h2{
@@ -46,7 +42,9 @@
   h3{
     color: grey;
   }
-  
+  form{
+      margin: 1em;
+  }
   label{
     color: grey;
     font-size: 12px;
@@ -60,23 +58,8 @@
     color: $third-color;
   }
   
-  .fa-chevron-right .fa-chevron-left{
-    font-size: 40px;
-    color: $third-color;
-  }
-  
-  .fa-facebook-f:hover{
-    color: #3b5998;
-  }
-  .fa-instagram:hover{
-    color: #3f729b;
-  }
-  .fa-pinterest:hover{
-    color: #e60023;
-  }
-  .fa-twitter:hover{
-    color: #00ACEE;
-  }
+
+
   
   .empty-cart{
     text-align: center;

@@ -1,3 +1,9 @@
 $main-color: rgb(243, 233, 241);
 $second-color: rgb(143, 95, 250);
 $third-color: rgb(203, 125, 85);
+
+
+$breakpoints: (
+  mobile: 599px,
+  tablette: 850px,
+);

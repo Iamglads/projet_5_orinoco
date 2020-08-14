@@ -14,12 +14,15 @@
       box-shadow: 0 1px 1px 0 rgb(175, 175, 175);
       border-radius: 15px;
       padding: .5rem;
-
       .products-img {
         .img-camera {
           width: 150px;
           height: auto;
           box-shadow: 1px 1px 5px 1px grey;
+          @include forMobile{
+            width: 100%;
+            height: auto;
+          }
         }
       }
       .fa-trash-alt{
@@ -27,9 +30,15 @@
         cursor: pointer;
       }
       h3{
-        font-size: 12px;
+        font-size: 15px;
+        @include forTablet{
+          margin-top: 10px;
+        }
       }
-     
+     @include forMobile{
+       display: block;
+       margin-bottom: 10px;
+     }
     }
   }
  
@@ -58,6 +67,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 }
 
@@ -111,15 +121,6 @@ input{
   transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out, 
   -webkit-transform .2s ease-in-out;
-}
-
-.requiredInput{
-  color:red;
-  }
-
-
-.displayForm{
-  display: none;
 }
 
 /*______CART END _______*/

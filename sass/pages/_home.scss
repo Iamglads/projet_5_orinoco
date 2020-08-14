@@ -11,7 +11,15 @@
       display: flex;
       align-items: center;
       border-radius: 15px;
-      box-shadow: 1px 1px 1px 1px rgb(175, 175, 175);
+      @include forMobile{
+        margin: 1em;
+      }
+      h2{
+        @include forMobile {
+          margin-top: 10px;
+        }
+      }
+      background-color: #FFF;
       @media screen and(max-width: 900px) {
         display: block;
       }
@@ -45,8 +53,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed;
-  background-size: cover;
   .content {
     display: flex;
     justify-content: center;
@@ -54,8 +60,11 @@
       display: block;
       input {
         border: none;
-        width: 400px;
+        width: 80%;
         margin-bottom: 50px;
+        @include forMobile{
+          width: auto;
+        }
       }
     }
     .btn-newsletter {

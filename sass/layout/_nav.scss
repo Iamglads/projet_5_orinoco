@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 1px 1px 4px 1px rgb(175, 175, 175);
     .logo {
       width: auto;
       height: 70px;
@@ -40,7 +41,42 @@
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
-    top: -5px;
+    top: -7px;
     left: 18px;
   }
   /*______NAV END_______*/
+  
+  .nav-login{
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  .sous{
+    display: none;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: block;
+}
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+}
+.deroulant > a::after{
+    content:"▼";
+    font-size: 12px;
+    color: $second-color;
+}
+  
