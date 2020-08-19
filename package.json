@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon serve"
+    "start": "nodemon serve",
+    "sass":"sass --watch ./sass/style.scss:./css/style.css"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "mongoose": "^5.9.20",
     "mongoose-unique-validator": "^2.0.2",
     "nodemon": "^2.0.4",
+    "sass": "^1.26.10",
     "uuid": "^3.4.0"
   }
 }

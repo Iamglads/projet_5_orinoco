@@ -1,8 +1,10 @@
 .bloc-login {
     display: flex;
     justify-content: flex-end;
+    margin-right: 1em;
     .deroulant {
       .good-morning {
+          font-size: 12px;
         &::after {
           content: "▼";
           font-size: 12px;
@@ -22,6 +24,7 @@
           a {
             padding: 10px;
             border-bottom: none;
+            font-size: 12px;
             &:hover {
               border-bottom: none;
             }

@@ -8,40 +8,54 @@
     width: 80%;
     .show-product {
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 1px 1px 0 rgb(175, 175, 175);
       border-radius: 15px;
-      padding: .5rem;
+      padding: 0.5rem;
       .products-img {
+        width: 35%;
         .img-camera {
           width: 150px;
           height: auto;
-          box-shadow: 1px 1px 5px 1px grey;
-          @include forMobile{
+          margin-right: 5px;
+          //box-shadow: 1px 1px 5px 1px grey;
+          @include forMobile {
             width: 100%;
             height: auto;
           }
         }
       }
-      .fa-trash-alt{
-        color: rgb(151, 10, 10);
-        cursor: pointer;
+      .show-product-infos {
+        width: 35%;
+        .name-product {
+          color: $third-color;
+        }
       }
-      h3{
+      .price-product{
+        width: 20%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      h3 {
         font-size: 15px;
-        @include forTablet{
+        margin-left: 0;
+        @include forTablet {
           margin-top: 10px;
         }
       }
-     @include forMobile{
-       display: block;
-       margin-bottom: 10px;
-     }
+      .fa-trash-alt {
+        color: rgb(151, 10, 10);
+        cursor: pointer;
+      }
     }
+    @include forMobile{
+      width: 98%;
+    }
+
   }
- 
+
   .btn {
     border: 1px solid $third-color;
     padding: 0.6em;
@@ -58,19 +72,18 @@
 /*______PRODUCT IN CART _______*/
 
 /*______INFOS CART _______*/
-.section__infosCart{
+.section__infosCart {
   margin-top: 20px;
-   width: 100%;
-    height: 100px;
+  width: 100%;
+  height: 100px;
   .infos-cart {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
-}
-
 
 /*_____ CART PAGE MAIN CONTAINER_______*/
 
@@ -79,26 +92,24 @@
   margin: 50px auto;
   position: relative;
   padding: 1em;
-
 }
 
-input{
+input {
   background-color: $main-color;
+  color: grey;
 }
 .contact-form .form-field {
   position: relative;
-  margin: 32px 0;
+  margin: 15px 0;
 }
 .contact-form .input-text {
   display: block;
   width: 100%;
-  height: 36px;
-  border-width: 0 0 1px 0;
+  height: 30px;
   border-color: $third-color;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 10px;
   font-weight: 400;
-
 }
 .contact-form .input-text:focus {
   outline: none;
@@ -106,7 +117,7 @@ input{
 .contact-form .input-text:focus + .label,
 .contact-form .input-text.not-empty + .label {
   -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
+  transform: translateY(-24px);
 }
 .contact-form .label {
   position: absolute;
@@ -117,10 +128,17 @@ input{
   font-weight: 400;
   color: $third-color;
   cursor: text;
-  transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out, 
-  -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 /*______CART END _______*/
+
+/*______CONFIRM ORDER _______*/
+.confirm-order {
+  p {
+    line-height: 10px;
+  }
+}
+/*______CONFIRM ORDER END _______*/

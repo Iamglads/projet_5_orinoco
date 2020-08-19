@@ -35,7 +35,7 @@ class Personalize {
                      </div>
                      <div class="infos-product">
                          <h2 id="${camera._id}"> ${camera.name}</h2>
-                         <h3> ${camera.price/100} €</h3>
+                         <h3> ${camera.price / 100} €</h3>
                          <p> ${camera.description}</p>
 
                          <label for="lenses"> Objectifs</label>
@@ -67,27 +67,30 @@ class Personalize {
                         "id": camera._id,
                         "name": camera.name,
                         "img": camera.imageUrl,
-                        "price": camera.price/100,
+                        "price": camera.price / 100,
                         "quantity": quantity.value,
                         "lense": lenses.value,
                     }
-                    const totalPrice = (camera.price/100) * quantity.value
+                    const totalPrice = (camera.price / 100) * quantity.value
                     objetWithAllInfo.totalPrice = totalPrice;
 
 
                     cart = JSON.parse(localStorage.getItem('cart')) || [];
-                    cart.push(objetWithAllInfo);
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    console.log(objetWithAllInfo)
-                    
-                    // update the cart item to show the number of products in cart
-                    let getCart = JSON.parse(localStorage.getItem('cart'));
-                    let cartQuantity = getCart.length;
-                    cartItems.innerHTML = cartQuantity;
+                   /*  const doubleId = cartJSON.parse(objetWithAllInfo.id);
+                    console.log(doubleId); */
 
-                     // disable the button if this product is already in cart
-                     addToCart.innerText = "Ajouté";
-                     addToCart.disabled = true; 
+                        cart.push(objetWithAllInfo);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        console.log(objetWithAllInfo)
+
+                        // update the cart item to show the number of products in cart
+                        let getCart = JSON.parse(localStorage.getItem('cart'));
+                        let cartQuantity = getCart.length;
+                        cartItems.innerHTML = cartQuantity;
+
+                        // disable the button if this product is already in cart
+                        addToCart.innerText = "Ajouté";
+                        addToCart.disabled = true;
                 })
             })
             .catch(error => { console.log(error) })

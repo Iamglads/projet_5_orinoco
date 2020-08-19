@@ -13,8 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
@@ -26,119 +26,108 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light menu-nav ">
-        <a href="index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
-        <ul class="nav-link">
-            <li> <a href="index.html">Produits</a></li>
-            <li> <a href="contact.html">Contact</a></li>
+    <main>
+        <!--nav-->
+        <nav class="navbar navbar-expand-lg navbar-light menu-nav ">
+            <a href="index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
+            <ul class="nav-link">
+                <li> <a href="index.html">Produits</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+                <div class="nav-icon-cart">
+                    <a href="panier.html"><i class="fas fa-cart-plus"></i></a>
+                    <span class="cart-items">0</span>
+                </div>
+            </ul>
+        </nav>
+        <!--nav end-->
+        <!--header-->
+        <header>
+            <h1> Panier</h1>
+        </header>
+        <!--header end-->
+        <!--section infos cart-->
+        <section class="section__infosCart">
+            <div class="infos-cart">
+                <div>
+                    <button class="btn-grey btn-clear-cart" type="button"> Vider le panier</button>
+                </div>
+                <div>
+                    <h4> Total: <span class="cart-total">0</span>€</h4>
+                </div>
+            </div>
+        </section>
+        <!--section infos cart end-->
+        <!--section display product-->
+        <section class="section__productsInCart">
+            <div class="products__cart--list">
+                <!-- products in cart-->
+            </div>
+        </section>
+        <!--section display product end-->
+        <!--section form-->
+        <section class="get-in-touch section-form">
+            <button class="btn btn-payment"> Poursuivre</button>
+            <div class="show-form display-form">
+                <h2>Renseignez vos informations</h2>
+                <form class="contact-form row">
+                    <div class="form-field col-lg-6">
+                        <input id="name" class="input-text form-control js-input" type="text" required maxlength="50">
+                        <label class="label" for="name">Nom</label>
+                    </div>
+                    <div class="form-field col-lg-6 ">
+                        <input id="firstName" class="input-text form-control js-input" type="text" required
+                            maxlength="50">
+                        <label class="label" for="firstName">Prénom</label>
+                    </div>
+                    <div class="form-field col-lg-12 ">
+                        <input id="email" class="input-text form-control js-input" type="email" required maxlength="50">
+                        <label class="label" for="email">E-mail</label>
+                    </div>
+                    <div class="form-field col-lg-12">
+                        <input id="adress" class="input-text form-control js-input" type="text" required
+                            maxlength="250">
+                        <label class="label" for="adress">Adresse</label>
+                    </div>
+                    <div class="form-field col-lg-6 ">
+                        <input id="city" class="input-text form-control js-input" type="text" required maxlength="20">
+                        <label class="label" for="city">Ville</label>
+                    </div>
+                    <div class="form-field col-lg-6 ">
+                        <input id="postCard" class="input-text form-control js-input" type="number" maxlength="5">
+                        <label class="label" for="postCard">Code postale</label>
+                    </div>
+                    <div class="form-field">
+                        <input id="accept" type="checkbox" required>
+                        <label for="accept">J'accepte</label>
+                        <p>J'ai lu et j'accepte les <a href="#">conditions générales d'utilisation</a></p>
+                    </div>
+                    <p class="requiredInput"></p>
+                    <!--SUBMIT-->
+                    <div class="form-field col-lg-12">
+                        <input class="submit-btn btn" type="submit" value="Valider">
+                    </div>
+                </form>
+            </div>
+            <!--Details order and confirm-->
             <div>
-                <a href="panier.html"><i class="fas fa-cart-plus"></i></a>
-                <span class="cart-items">0</span>
-            </div>
-        </ul>
-    </nav>
-    <header>
-        <h1> Panier</h1>
-    </header>
-    <section class="section__productsInCart">
-        <div class="products__cart--list">
-            <!-- products in cart-->
-        </div>
-        <!-- Total pannier-->
-    </section>
-    <section class="section__infosCart">
-        <div class="infos-cart">
-            <div>
-            </div>
-            <div>
-                <button class="btn btn-clear-cart" type="button"> Vider le panier</button>
-            </div>
-            <div>
-                <h4> Total <span class="cart-total">0</span>€</h4>
-            </div>
-        </div>
-    </section>
-    <!--form-->
-    <section class="get-in-touch">
-        <button class="btn btn-payment"> Paiement</button>
-        <form class="contact-form row displayForm">
-            <div class="form-field col-lg-6">
-                <input id="name" class="input-text js-input" type="text" required>
-                <label class="label" for="name">Nom</label>
-            </div>
-            <div class="form-field col-lg-6 ">
-                <input id="firstName" class="input-text js-input" type="text" required>
-                <label class="label" for="firstName">Prénom</label>
-            </div>
-            <div class="form-field col-lg-6 ">
-                <input id="email" class="input-text js-input" type="email" required>
-                <label class="label" for="email">E-mail</label>
-            </div>
-            <div class="form-field col-lg-6 ">
-                <input id="phone" class="input-text js-input" type="tel" required>
-                <label class="label" for="phone">Téléphone</label>
-            </div>
-            <div class="form-field col-lg-12">
-                <input id="adress" class="input-text js-input" type="text" required>
-                <label class="label" for="adress">Adresse</label>
-            </div>
-            <div class="form-field col-lg-6 ">
-                <input id="city" class="input-text js-input" type="text" required>
-                <label class="label" for="city">Ville</label>
-            </div>
-            <div class="form-field col-lg-6 ">
-                <input id="postCard" class="input-text js-input" type="number" required maxlength="5">
-                <label class="label" for="postCard">Code postale</label>
+                <div class="confirm-order">
+                    <!-- From js-->
+                </div>
+                <button class="btn display-btn" id="confirm-btn">Confirmé</button>
             </div>
 
-            <div class="form-field col-lg-12">
-                <input class="submit-btn btn" type="submit" value="Poursuivre">
-            </div>
-        </form>
-    </section>
+        </section>
+        <!--section form-->
+        <!-- Footer -->
+        <footer class="page-footer font-small">
+            <!--Display from JS-->
+        </footer>
+        <!-- Footer End -->
 
-    <!-- Footer -->
-    <footer class="page-footer font-small">
-        <!-- Footer Elements -->
-        <div class="footer-element col-md-12 py-2">
-            <div class="footer-text">
-                <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                </ul>
-            </div>
-            <div>
-                <!-- Facebook -->
-                <a class="fb-ic">
-                    <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic">
-                    <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic">
-                    <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Pinterest-->
-                <a class="pin-ic">
-                    <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-                </a>
-            </div>
-            <div>
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
-                <i class="fab fa-cc-paypal"></i>
-            </div>
-        </div>
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-            <p>© 2020 Copyright - <a href="#"> Orinoco</a></p>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer End -->
+    </main>
+    <!--SCRIPTS-->
+    <script src="../js/displayNav.js"></script>
+    <script src="../js/displayFooter.js"></script>
     <script type="module" src="../js/cart.js"></script>
     <script src="../js/productInCart.js"></script>
 </body>

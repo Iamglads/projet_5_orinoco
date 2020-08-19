@@ -29,94 +29,74 @@
 </head>
 
 <body>
-    <!--nav-->
-    <nav class="navbar navbar-expand-lg navbar-light menu-nav">
-        <a href="index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
-        <div>
-            <a href="panier.html"><i class="fas fa-cart-plus"></i></a>
-            <span class="cart-items">0</span>
-        </div>
-    </nav>
-    <!--nav end-->
-    <!--header-->
-    <header class="header">
-        <div class="header-bloc">
-            <h1 class="text-center"> Nos produits</h1>
-        </div>
-    </header>
-    <!--header end-->
-    <!-- display products-->
-    <section class="section__products">
-        <div class="section__products--bloc">
-            <ul class="productsJs">
-                <!-- HTML FROM JS-->
+    <main>
+        <!--nav-->
+        <div class="bloc-login">
+            <ul>
+                <li class="deroulant"><a href="#" class="good-morning">Bonjour, Identifiez-vous!</a>
+                    <ul class="sub-menu">
+                        <li><a href="login.html">Connexion</a></li>
+                        <li> <a href="signup.html">Créez un compte</a> </li>
+                    </ul>
+                </li>
             </ul>
         </div>
-    </section>
-    <!-- display products end-->
-    <!--section newsletter-->
-    <section class="newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-10">
-                    <div class="content">
-                        <form>
-                            <h2>S'inscrire à la newsletter</h2>
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Entrez votre e-mail">
-                                <span class="input-group-btn">
+        <!--nav-->
+        <nav class="navbar navbar-expand-lg navbar-light menu-nav sticky">
+            <a href="index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
+            <ul class="nav-link">
+                <div class="nav-icon-cart">
+                    <a href="panier.html"><i class="fas fa-cart-plus"></i></a>
+                    <span class="cart-items">0</span>
+                </div>
+            </ul>
+        </nav>
+        <!--nav end-->
+        <!--header-->
+        <header class="header">
+            <div class="header-bloc">
+                <h1 class="text-center"> Nos produits</h1>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- display products-->
+        <section class="section__products">
+            <div class="section__products--bloc">
+                <ul class="productsJs">
+                    <!-- HTML FROM JS-->
+                </ul>
+            </div>
+        </section>
+        <!-- display products end-->
+        <!--section newsletter-->
+        <section class="newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="content">
+                            <form>
+                                <h2>S'inscrire à la Newsletter</h2>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Entrez votre e-mail">
                                     <button class="btn btn-newsletter" type="submit">S'inscrire</button>
-                                </span>
-                            </div>
-                        </form>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--section newsletter end-->
-    <!-- Footer -->
-    <footer class="page-footer font-small">
-        <!-- Footer Elements -->
-        <div class="footer-element col-md-12 py-2">
-            <div class="footer-text">
-                <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                </ul>
-            </div>
-            <div>
-                <!-- Facebook -->
-                <a class="fb-ic">
-                    <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic">
-                    <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic">
-                    <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                </a>
-                <!--Pinterest-->
-                <a class="pin-ic">
-                    <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-                </a>
-            </div>
-            <div>
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
-                <i class="fab fa-cc-paypal"></i>
-            </div>
-        </div>
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-            <p>© 2020 Copyright - <a href="#"> Orinoco</a></p>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer End -->
+        </section>
+        <!--section newsletter end-->
+        <!-- Footer -->
+        <footer class="page-footer font-small">
+            <!--Display from JS-->
+        </footer>
+        <!-- Footer End -->
+    </main>
+
+    <!--SCRIPTS-->
+    <script src="../js/displayNav.js"></script>
+    <script src="../js/displayFooter.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/productInCart.js"></script>
 </body>

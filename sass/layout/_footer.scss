@@ -1,19 +1,40 @@
 /*______FOOTER_______*/
 footer {
-  box-shadow: 1px 1px 3px 1px grey;
+  background-color: rgb(226, 205, 221);
   .footer-icons {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .footer-first-bloc {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .secure-payment,
+    .delivery,
+    .satisfy {
+      text-align: center;
+      line-height: 5px;
+      .fas {
+        font-size: 20px;
+        margin-top: 30px;
+        color: rgb(56, 56, 56);
+      }
+    }
+  }
+
+  .footer-second-bloc {
+    border-top: 1px solid rgb(204, 203, 203);
+  }
   .footer-element {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    @include forMobile{
+    @include forMobile {
       display: inline-block;
       text-align: center;
+      margin: 0 auto;
     }
     .footer-text {
       display: block;
@@ -28,23 +49,22 @@ footer {
     font-size: 10px;
     margin-top: 20px;
   }
-  .footer-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .bold {
+    font-weight: bold;
   }
+  
   // social medias
-  .fa-facebook-f:hover{
+  .fa-facebook-f:hover {
     color: #3b5998;
   }
-  .fa-instagram:hover{
+  .fa-instagram:hover {
     color: #3f729b;
   }
-  .fa-pinterest:hover{
+  .fa-pinterest:hover {
     color: #e60023;
   }
-  .fa-twitter:hover{
-    color: #00ACEE;
+  .fa-twitter:hover {
+    color: #00acee;
   }
 }
 

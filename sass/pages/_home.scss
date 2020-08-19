@@ -57,10 +57,9 @@
     display: flex;
     justify-content: center;
     .input-group {
-      display: block;
       input {
         border: none;
-        width: 80%;
+        width: 100%;
         margin-bottom: 50px;
         @include forMobile{
           width: auto;

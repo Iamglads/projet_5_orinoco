@@ -8,6 +8,7 @@
     background-color: $main-color;
     height: 100%;
   }
+ 
   p {
     font-family:'Times New Roman', Times, serif;
   }
@@ -49,6 +50,14 @@
     color: grey;
     font-size: 12px;
   }
+
+  .user-icon{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 5em;
+    color: $second-color;
+  }
   
   select,  #quantity{
     width: 120px;
@@ -68,4 +77,15 @@
   
   .display-form{
     display: none;
+  }
+
+  .display-btn{
+    visibility: hidden;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: .2s;
   }

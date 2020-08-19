@@ -1,6 +1,8 @@
 $main-color: rgb(243, 233, 241);
 $second-color: rgb(143, 95, 250);
 $third-color: rgb(203, 125, 85);
+$linear-gradient: linear-gradient(1300deg, $third-color, $second-color);
+$linear-gradient-reverse: linear-gradient(1300deg, $second-color, $third-color);
 
 
 $breakpoints: (

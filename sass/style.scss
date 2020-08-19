@@ -2,13 +2,16 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./base/general";
+@import "./layout/identification";
+@import "./layout/nav";
 @import "./layout/header";
 @import "./pages/cart";
 @import "./pages/product";
-@import "./layout/nav";
 @import "./pages/home";
 @import "./layout/footer";
 @import "./layout/btn";
 @import "./pages/connexion";
 @import "./pages/contact";
+
+@import "./layout/btn-animation";
 

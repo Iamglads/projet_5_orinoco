@@ -40,7 +40,7 @@
     position: absolute;
     width: 100%;
     height: 2px;
-    background-image: linear-gradient(120deg, $third-color, $second-color);
+    background-image: $linear-gradient;
     transition: 0.5s;
   }
 
@@ -53,7 +53,7 @@
   }
   .btn-signup {
     cursor: pointer;
-    background-image: linear-gradient(1300deg, $third-color, $second-color);
+    background-image: $linear-gradient;
     width: 100%;
     height: 40px;
     color: white;
@@ -66,10 +66,13 @@
   .btn-signup,
   .logbtn {
     &:hover {
-      background-image: linear-gradient(1300deg, $second-color, $third-color);
+      background-image: $linear-gradient-reverse;
     }
   }
   @include forMobile {
     width: 100%;
+  }
+  p{
+    padding: 1em;
   }
 }
