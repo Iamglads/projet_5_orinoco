@@ -35,7 +35,7 @@ class Products {
                     <h2> ${camera.name}</h2>
                     <p> ${camera.description}</p>
                     <h3> ${camera.price/100} €</h3>
-                    <a href="produit.html?id=${camera._id}" class="btn add-to-cart"> Personnaliser</a>
+                    <a href="/views/pages/produit.html?id=${camera._id}" class="btn add-to-cart"> Personnaliser</a>
                 </div>
             </li>`;
         })
