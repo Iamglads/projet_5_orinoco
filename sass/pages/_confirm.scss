@@ -1,0 +1,22 @@
+
+.section__confirm {
+  display: flex;
+  justify-content: center;
+  .section__confirm--bloc {
+    width: 50%;
+    height: 100%;
+    margin: 20px;
+    p {
+      font-size: 20px;
+    }
+    .div-check {
+      display: flex;
+      justify-content: center;
+      .fa-check {
+        color: rgb(11, 112, 11);
+        font-size: 50px;
+        text-align: center;
+      }
+    }
+  }
+}
