@@ -35,13 +35,14 @@ h1 {
   }
 }
 
-h1, h2 {
-  font-family: "Helvetica";
+h1 {
+  font-family: "Rock Salt", cursive;
 }
 
 h2 {
   color: #cb7d55;
   font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 h3 {
@@ -173,6 +174,69 @@ select, #quantity {
   top: -7px;
   left: 18px;
 }
+@media screen and (max-width: 768px) {
+  .menu-nav {
+    display: none;
+  }
+}
+
+.sidebar {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: block;
+    background-color: #f3e9f1;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #cccbcb;
+  }
+}
+.sidebar .sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .sidebar-logo .logo {
+  width: auto;
+  height: 50px;
+  cursor: pointer;
+}
+@media screen and (max-width: 599px) {
+  .sidebar .sidebar-logo .logo {
+    height: 40px;
+  }
+}
+.sidebar .nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar .nav-link .fa-bars {
+  font-size: 20px;
+  color: #8f5ffa;
+}
+.sidebar .nav-link li {
+  padding: 1em;
+}
+.sidebar .nav-link .nav-icon-cart .fa-cart-plus {
+  color: #8f5ffa;
+  padding: 0.7em;
+  position: absolute;
+}
+.sidebar .nav-link .nav-icon-cart .fa-cart-plus:hover {
+  box-shadow: 1px 1px 4px 1px #afafaf;
+  border-radius: 100%;
+}
+.sidebar .nav-link .nav-icon-cart .cart-items {
+  color: #cb7d55;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+  top: -7px;
+  left: 18px;
+}
 
 /*______HEADER_______*/
 .header {
@@ -240,7 +304,7 @@ select, #quantity {
   font-size: 15px;
   margin-left: 0;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 768px) {
   .section__productsInCart .products__cart--list .show-product h3 {
     margin-top: 10px;
   }
@@ -361,7 +425,7 @@ input {
   align-items: center;
 }
 .section__showProduct .display-product .show-product .products-img .img-camera {
-  width: 100%;
+  width: 30rem;
   height: auto;
   box-shadow: 1px 1px 5px 1px grey;
 }
@@ -394,9 +458,9 @@ input {
   display: flex;
   align-items: center;
   border-radius: 15px;
-  background-color: #FFF;
+  background-color: #fff;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 768px) {
   .section__products .section__products--bloc .show-product {
     margin: 1em;
     padding: 1em;
@@ -407,7 +471,7 @@ input {
     margin-top: 10px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .section__products .section__products--bloc .show-product {
     display: block;
   }
@@ -421,7 +485,7 @@ input {
   height: auto;
   border-radius: 5px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .section__products .section__products--bloc .show-product .products-img {
     margin-right: 0px;
     width: 100%;
@@ -539,9 +603,9 @@ footer .fa-twitter:hover {
   color: #fff;
   letter-spacing: 2px;
   font-size: 16px;
-  padding: 8px 16px;
+  padding: 4px 8px;
   border: none;
-  width: 200px;
+  width: auto;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -552,13 +616,12 @@ footer .fa-twitter:hover {
 
 .btn-grey {
   display: inline-block;
-  background-color: #424242;
   color: #830404;
   letter-spacing: 2px;
   font-size: 16px;
   padding: 8px 16px;
   border: none;
-  width: 200px;
+  width: auto;
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -566,6 +629,17 @@ footer .fa-twitter:hover {
 .btn-grey:hover {
   background-color: #830404;
   color: #fff;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.divider .span-divider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(1300deg, #cb7d55, #8f5ffa);
 }
 
 .main {
@@ -679,6 +753,11 @@ footer .fa-twitter:hover {
   color: #0b700b;
   font-size: 50px;
   text-align: center;
+}
+@media screen and (max-width: 599px) {
+  .section__confirm .section__confirm--bloc {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

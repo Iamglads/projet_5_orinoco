@@ -3,6 +3,7 @@
 //const deleteItemInCart = document.querySelector('.remove-item');
 const btnClearCart = document.querySelector('.btn-clear-cart');
 const cartItems = document.querySelector('.cart-items');
+const cartItemsMobiles = document.querySelector('.cart-items-mobiles');
 const formSubmit = document.querySelector('.contact-form');
 const continueShopping = document.querySelector('.btn-payment');
 const showForm = document.querySelector('.show-form');
@@ -65,6 +66,7 @@ btnClearCart.addEventListener('click', () => {
     continueShopping.style.display = "none";
     confirmOrder.style.display = "none";
     cartItems.innerHTML = "0";
+    cartItemsMobiles.innerHTML = "0";
     showForm.style.display = "none";
 });
 
@@ -140,6 +142,7 @@ function sendToApi() {
             .then((dataServer) => {
                 sessionStorage.setItem('dataServer', JSON.stringify(dataServer))
                 if(response.status === 201){
+                    confirmOrder.style.background = "../images/download.gif";
                     setTimeout(confirmPage, 2000);
                 }
             })

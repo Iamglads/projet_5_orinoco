@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@300&family=Permanent+Marker&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -41,11 +42,28 @@
                 </div>
             </ul>
         </nav>
+         <!--nav mobiles-->
+         <nav class="sidebar">
+            <ul class="nav-link">
+                <li><i class="fas fa-bars"></i></li>
+                <li class="sidebar-logo">
+                    <a href="/index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
+                </li>
+                <li class="nav-icon-cart">
+                    <a href="/views/pages/panier.html"><i class="fas fa-cart-plus"></i></a>
+                    <span class="cart-items cart-items-mobiles">0</span>
+                </li>
+            </ul>
+        </nav>
+        <!--nav mobiles-->
         <header>
             <div class="header-bloc">
                 <h1>Confirmation de votre commande</h1>
             </div>
         </header>
+        <div class="divider">
+            <div class="span-divider"></div>
+        </div>
         <section class="section__confirm">
             <div class="section__confirm--bloc">
                 <!-- AJOUTER ICI LE MESSAGE DE VALIDATION DE COMMANDE-->
@@ -58,6 +76,7 @@
         <!-- Footer End -->
     </main>
     <!--SCRIPTS-->
+    <script src="../js/displayNav.js"></script>
     <script  src="../js/productInCart.js"></script>
     <script src="../js/displayFooter.js"></script>
     <script  src="../js/confirm.js"></script>

@@ -18,5 +18,8 @@
         text-align: center;
       }
     }
+    @include forMobile{
+      width: 80%;
+    }
   }
 }

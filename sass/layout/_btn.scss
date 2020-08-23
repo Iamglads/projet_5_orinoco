@@ -4,9 +4,9 @@
     color: #fff;
     letter-spacing: 2px;
     font-size: 16px;
-    padding: 8px 16px;
+    padding: 4px 8px;
     border: none;
-    width:200px;
+    width:auto;
     margin-bottom: 10px;
     cursor: pointer;
     &:hover{
@@ -17,13 +17,12 @@
 
   .btn-grey{
     display: inline-block;
-    background-color: rgb(66, 66, 66);
     color: rgb(131, 4, 4);
     letter-spacing: 2px;
     font-size: 16px;
     padding: 8px 16px;
     border: none;
-    width:200px;
+    width:auto;
     margin-bottom: 10px;
     border-radius: 5px;
     cursor: pointer;

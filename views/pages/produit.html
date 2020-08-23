@@ -10,6 +10,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Permanent+Marker&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -40,10 +41,27 @@
             </ul>
         </nav>
         <!--nav-->
+         <!--nav mobiles-->
+         <nav class="sidebar">
+            <ul class="nav-link">
+                <li><i class="fas fa-bars"></i></li>
+                <li class="sidebar-logo">
+                    <a href="/index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
+                </li>
+                <li class="nav-icon-cart">
+                    <a href="/views/pages/panier.html"><i class="fas fa-cart-plus"></i></a>
+                    <span class="cart-items cart-items-mobiles">0</span>
+                </li>
+            </ul>
+        </nav>
+        <!--nav mobiles-->
         <!--header-->
         <header>
             <h1> Personnaliser</h1>
         </header>
+        <div class="divider">
+            <div class="span-divider"></div>
+        </div>
         <!--header-->
         <!--section show product-->
         <section class="section__showProduct">
@@ -66,6 +84,7 @@
     </main>
 
     <!--SCRIPTS-->
+    <script src="../js/displayNav.js"></script>
     <script src="../js/displayFooter.js"></script>
     <script type="module" src="../js/product.js"></script>
     <script src="../js/productInCart.js"></script>

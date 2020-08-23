@@ -1,4 +1,5 @@
 const cartItems = document.querySelector('.cart-items');
+const cartItemsMobiles = document.querySelector('.cart-items-mobiles');
 const displayProductsIncart = document.querySelector('.products__cart--list');
 const sectionInfosCart = document.querySelector('.section__infosCart');
 const continueShopping = document.querySelector('.btn-payment');
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else{
         let cartQuantity = getCart.length;
         cartItems.innerHTML = cartQuantity;
+        cartItemsMobiles.innerHTML = cartQuantity;
         console.log(getCart.length);
     }
 });

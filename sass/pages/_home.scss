@@ -10,17 +10,17 @@
       display: flex;
       align-items: center;
       border-radius: 15px;
-      @include forTablet{
+      @include forTablet {
         margin: 1em;
         padding: 1em;
       }
-      h2{
+      h2 {
         @include forMobile {
           margin-top: 10px;
         }
       }
-      background-color: #FFF;
-      @media screen and(max-width: 900px) {
+      background-color: #fff;
+      @include forTablet {
         display: block;
       }
       .products-img {
@@ -32,13 +32,13 @@
           //box-shadow: 1px 1px 4px 1px grey;
           border-radius: 5px;
         }
-        @media screen and(max-width: 900px) {
+        @include forTablet {
           margin-right: 0px;
           width: 100%;
         }
       }
     }
-    @media screen and(max-width: 599px) {
+    @include forMobile {
       width: 100%;
     }
   }
@@ -61,7 +61,7 @@
         border: none;
         width: 100%;
         margin-bottom: 50px;
-        @include forMobile{
+        @include forMobile {
           width: auto;
         }
       }

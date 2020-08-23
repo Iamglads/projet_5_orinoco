@@ -33,12 +33,13 @@
     }
   }
   
-  h1, h2{
-    font-family: 'Helvetica';
+  h1{
+    font-family: 'Rock Salt', cursive;;
   }
   h2{
     color: $third-color;
     font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   h3{
     color: grey;
@@ -67,8 +68,6 @@
     color: $third-color;
   }
   
-
-
   
   .empty-cart{
     text-align: center;
