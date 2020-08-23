@@ -90,7 +90,7 @@ select, #quantity {
   position: fixed;
   top: 0;
   width: 100%;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 
 .bloc-login {
@@ -136,6 +136,7 @@ select, #quantity {
   align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #cccbcb;
+  z-index: 10;
 }
 .menu-nav .logo {
   width: auto;
@@ -315,14 +316,14 @@ input {
 
 .contact-form .input-text:focus + .label,
 .contact-form .input-text.not-empty + .label {
-  -webkit-transform: translateY(-24px);
-  transform: translateY(-24px);
+  -webkit-transform: translateY(-14px);
+  transform: translateY(-14px);
 }
 
 .contact-form .label {
   position: absolute;
   left: 20px;
-  bottom: 11px;
+  bottom: 16px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
@@ -389,16 +390,16 @@ input {
   width: 70%;
 }
 .section__products .section__products--bloc .show-product {
-  padding: 1em;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
   border-radius: 15px;
   background-color: #FFF;
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 850px) {
   .section__products .section__products--bloc .show-product {
     margin: 1em;
+    padding: 1em;
   }
 }
 @media screen and (max-width: 599px) {
@@ -418,7 +419,6 @@ input {
 .section__products .section__products--bloc .show-product .products-img .img-cameras {
   width: 100%;
   height: auto;
-  box-shadow: 1px 1px 4px 1px grey;
   border-radius: 5px;
 }
 @media screen and (max-width: 900px) {
@@ -464,7 +464,7 @@ input {
 /*______NEWSLETTER END_______*/
 /*______FOOTER_______*/
 footer {
-  background-color: #e2cddd;
+  background-color: #e2d1de;
 }
 footer .footer-icons {
   display: flex;
@@ -657,6 +657,28 @@ footer .fa-twitter:hover {
 }
 .contact-form input:focus {
   border: 1px solid #cb7d55;
+}
+
+.section__confirm {
+  display: flex;
+  justify-content: center;
+}
+.section__confirm .section__confirm--bloc {
+  width: 50%;
+  height: 100%;
+  margin: 20px;
+}
+.section__confirm .section__confirm--bloc p {
+  font-size: 20px;
+}
+.section__confirm .section__confirm--bloc .div-check {
+  display: flex;
+  justify-content: center;
+}
+.section__confirm .section__confirm--bloc .div-check .fa-check {
+  color: #0b700b;
+  font-size: 50px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -39,16 +39,7 @@ class Products {
                 </div>
             </li>`;
         })
-        this.saveCamerasInStorage(cameras)
     }
-    // save all product in local storage 
-    saveCamerasInStorage(cameras) {
-        cameras.map((camera) => {
-            //log(camera)
-            localStorage.setItem("camera", JSON.stringify(camera));
-        })
-    }
-
 }
 // Execute when Dom loaded
 document.addEventListener("DOMContentLoaded", () => {

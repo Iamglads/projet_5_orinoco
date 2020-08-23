@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 <!-- Copyright -->
 <div class="footer-copyright text-center py-3">
-    <span>© 2020 Copyright - <a href="#"> Orinoco</a></span>
+    <p>© 2020 Copyright - <a href="#"> Orinoco</a></p>
 </div>
 <!-- Copyright -->`;
 });

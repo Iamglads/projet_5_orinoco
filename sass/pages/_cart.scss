@@ -116,13 +116,13 @@ input {
 }
 .contact-form .input-text:focus + .label,
 .contact-form .input-text.not-empty + .label {
-  -webkit-transform: translateY(-24px);
-  transform: translateY(-24px);
+  -webkit-transform: translateY(-14px);
+  transform: translateY(-14px);
 }
 .contact-form .label {
   position: absolute;
   left: 20px;
-  bottom: 11px;
+  bottom: 16px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;

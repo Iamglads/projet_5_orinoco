@@ -6,13 +6,13 @@
     margin-top: 30px;
     width: 70%;
     .show-product {
-      padding: 1em;
       margin-bottom: 30px;
       display: flex;
       align-items: center;
       border-radius: 15px;
-      @include forMobile{
+      @include forTablet{
         margin: 1em;
+        padding: 1em;
       }
       h2{
         @include forMobile {
@@ -29,7 +29,7 @@
         .img-cameras {
           width: 100%;
           height: auto;
-          box-shadow: 1px 1px 4px 1px grey;
+          //box-shadow: 1px 1px 4px 1px grey;
           border-radius: 5px;
         }
         @media screen and(max-width: 900px) {
