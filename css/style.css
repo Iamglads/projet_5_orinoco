@@ -237,6 +237,24 @@ select, #quantity {
   top: -7px;
   left: 18px;
 }
+.sidebar .menu-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: white;
+  opacity: 0.9;
+  z-index: 4;
+}
+.sidebar .menu-link li {
+  padding: 1em;
+}
+@media screen and (max-width: 599px) {
+  .sidebar .menu-link {
+    width: 60%;
+  }
+}
 
 /*______HEADER_______*/
 .header {
@@ -740,10 +758,10 @@ footer .fa-twitter:hover {
 .section__confirm .section__confirm--bloc {
   width: 50%;
   height: 100%;
-  margin: 20px;
 }
 .section__confirm .section__confirm--bloc p {
   font-size: 20px;
+  margin: 20px;
 }
 .section__confirm .section__confirm--bloc .div-check {
   display: flex;
@@ -758,6 +776,11 @@ footer .fa-twitter:hover {
   .section__confirm .section__confirm--bloc {
     width: 80%;
   }
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

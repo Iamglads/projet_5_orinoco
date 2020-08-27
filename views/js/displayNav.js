@@ -1,5 +1,4 @@
 
-
 window.onscroll = () => {
     fixeNavBar();
 }

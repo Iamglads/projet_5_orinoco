@@ -99,4 +99,21 @@
       }
     }
   }
+  .menu-link{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background: white;
+    opacity: .9;
+    z-index: 4;
+    li{
+      padding: 1em;
+    }
+    @include forMobile{
+      width: 60%;
+    }
+  }
+  
 }

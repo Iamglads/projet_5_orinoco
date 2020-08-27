@@ -1,35 +1,33 @@
-
+import { getOneCameraById } from './functions.js'
 /*-----------------------------------------------------
 When user click on personalize link, we display product  with id on the product page
 -------------------------------------------------------*/
-const url = "http://localhost:3000/api/cameras";
 const productsDOM = document.querySelector('.personalizeJs');
 const addToCart = document.querySelector('.add-to-cart');
 const cartItems = document.querySelector('.cart-items');
 const emptyCart = document.querySelector('.products__cart--list');
-
-// array to save product in localStorage
 let cart = []
 
 // Execute when Dom loaded
 document.addEventListener("DOMContentLoaded", () => {
-    const getOneProduct = new Personalize();
+    const getOneProduct = new PersonalizeCamera();
     getOneProduct.displayOneCamera();
 
 });
 
 // this class get the camera selected in home page and display it with his id (in url)
-class Personalize {
-    async displayOneCamera() {
-        // get the id and asign to params variable 
-        let params = new URLSearchParams(window.location.search);
-        params.has('id');
-        let id = params.get('id');
-
-        let res = await fetch(url + "/" + id);
-        let product = await res.json()
+class PersonalizeCamera {
+    displayOneCamera() {
+        getOneCameraById()
             .then((camera) => {
-                productsDOM.innerHTML = ` <article class="show-product">
+                this.displayOneCameraToPersonalize(camera)
+                return camera
+            })
+            .catch(error => { console.log(error) })
+        this.addCameraInCartAfterPersonalize()
+    }
+    displayOneCameraToPersonalize(camera) {
+        productsDOM.innerHTML = ` <article class="show-product">
                      <div class="products-img">
                          <img src="${camera.imageUrl}" alt="image-${camera.name}" class="img-camera">
                      </div>
@@ -50,18 +48,24 @@ class Personalize {
                      </div>
                  </div>
                  </article>`;
-                // get lenses of camera, it is an array, so we run in this array with for  
-                //console.log(camera.lenses.length) test if we get the array
-                for (let i = 0; i < camera.lenses.length; i++) {
-                    const selectLenses = document.querySelector('.camera-lenses');
-                    selectLenses.innerHTML += `<option id="lenses" value="${camera.lenses[i]}">${camera.lenses[i]}</option>`;
-                }
+        this.displayLenseCameras(camera)
+    }
+    displayLenseCameras(camera) {
+        // get lenses of camera, it is an array, so we run in this array with for  
+        //console.log(camera.lenses.length) test if we get the array
+        for (let i = 0; i < camera.lenses.length; i++) {
+            const selectLenses = document.querySelector('.camera-lenses');
+            selectLenses.innerHTML += `<option id="lenses" value="${camera.lenses[i]}">${camera.lenses[i]}</option>`;
+        }
+    }
 
-                const quantity = document.querySelector('#quantity');
-                const lenses = document.querySelector('#lenses');
-
-                // when users click on button add to cart, we push the product information in cart array and save this cart in local storage
+    addCameraInCartAfterPersonalize() {
+        // when users click on button add to cart, we push the product information in cart array and save this cart in local storage
+        getOneCameraById()
+            .then((camera) => {
                 addToCart.addEventListener('click', () => {
+                    const quantity = document.querySelector('#quantity');
+                    const lenses = document.querySelector('#lenses');
 
                     let objetWithAllInfo = {
                         "id": camera._id,
@@ -76,27 +80,24 @@ class Personalize {
 
 
                     cart = JSON.parse(localStorage.getItem('cart')) || [];
-                   /*  const doubleId = cartJSON.parse(objetWithAllInfo.id);
-                    console.log(doubleId); */
 
-                        cart.push(objetWithAllInfo);
-                        localStorage.setItem('cart', JSON.stringify(cart));
-                        console.log(objetWithAllInfo)
+                    cart.push(objetWithAllInfo);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    console.log(objetWithAllInfo)
 
-                        // update the cart item to show the number of products in cart
-                        let getCart = JSON.parse(localStorage.getItem('cart'));
-                        let cartQuantity = getCart.length;
-                        cartItems.innerHTML = cartQuantity;
+                    // update the cart item to show the number of products in cart
+                    let getCart = JSON.parse(localStorage.getItem('cart'));
+                    let cartQuantity = getCart.length;
+                    cartItems.innerHTML = cartQuantity;
 
-                        // disable the button if this product is already in cart
-                        addToCart.innerText = "Ajouté";
-                        addToCart.disabled = true;
+                    // disable the button if this product is already in cart
+                    addToCart.innerText = "Ajouté";
+                    addToCart.disabled = true;
                 })
             })
-            .catch(error => { console.log(error) })
+            .catch((error) => console.log(error))
+
     }
 }
-
-
 
 
