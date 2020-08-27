@@ -53,21 +53,13 @@ function displayProductsSaveInCart() {
         totalPriceOrder += itemsCart[i].totalPrice;
         const cartTotal = document.querySelector('.cart-total');
         cartTotal.innerHTML = totalPriceOrder;
-
     }
 }
 
 
 // remove all products in cart 
 btnClearCart.addEventListener('click', () => {
-    localStorage.removeItem('cart');
-    displayProductsIncart.innerHTML = `<p class="empty-cart">Votre panier est vide</p>`;
-    sectionInfosCart.style.display = "none";
-    continueShopping.style.display = "none";
-    confirmOrder.style.display = "none";
-    cartItems.innerHTML = "0";
-    cartItemsMobiles.innerHTML = "0";
-    showForm.style.display = "none";
+    clearCart();
 });
 
 /*-------------------------------------------------------
@@ -79,12 +71,13 @@ continueShopping.addEventListener('click', () => {
     continueShopping.style.display = 'none';
 });
 
-// Data from form
-const lastName = document.querySelector('#name');
-const firstName = document.querySelector('#firstName');
-const email = document.querySelector('#email');
-const address = document.querySelector('#adress');
-const city = document.querySelector('#city');
+confirmOrderBtn.addEventListener('click', () => {
+    for (let i = 0; i < itemsCart.length; i++) {
+        products.push(itemsCart[i].id)
+    }
+    responseServer();
+})
+
 
 const contact = {
     'lastName': lastName.value,
@@ -102,7 +95,12 @@ formSubmit.addEventListener('submit', (e) => {
         requiredInput.innerHTML = "Merci de completer le formulaire!";
         requiredInput.style.color = "red";
     } else {
-        confirmOrder.innerHTML = `
+        displayOrderResume()
+    }
+});
+
+function displayOrderResume() {
+    confirmOrder.innerHTML = `
         <h3>Résumé de la commande</h3>
         <div>
             <p>Nom: ${lastName.value}</p>
@@ -113,21 +111,12 @@ formSubmit.addEventListener('submit', (e) => {
         <div>
             <h3>Total commande: ${totalPriceOrder}€</h3>
         </div>`;
-        showForm.style.display = "none";
-        continueShopping.style.display = "none"
-        confirmOrderBtn.classList.remove('display-btn');
-    }
+    showForm.style.display = "none";
+    continueShopping.style.display = "none"
+    confirmOrderBtn.classList.remove('display-btn');
+}
 
-});
-
-confirmOrderBtn.addEventListener('click', () => {
-    for (let i = 0; i < itemsCart.length; i++) {
-        products.push(itemsCart[i].id)
-    }
-    sendToApi();
-})
-
-function sendToApi() {
+function postObjectsContactProducts() {
     let result = fetch(urlOrder,
         {
             headers: {
@@ -137,21 +126,36 @@ function sendToApi() {
             method: "POST",
             body: JSON.stringify({ contact, products })
         })
-    result.then((response) => {
-        response.json()
-            .then((dataServer) => {
-                sessionStorage.setItem('dataServer', JSON.stringify(dataServer))
-                if(response.status === 201){
-                    confirmOrder.style.background = "../images/download.gif";
-                    setTimeout(confirmPage, 2000);
-                }
-            })
-    })
+    return result
+}
+
+function responseServer() {
+    postObjectsContactProducts()
+        .then((response) => {
+            response.json()
+                .then((dataServer) => {
+                    sessionStorage.setItem('dataServer', JSON.stringify(dataServer))
+                    if (response.status === 201) {
+                        setTimeout(confirmPage, 2000);
+                    }
+                })
+        })
         .catch((error) => console.log(error))
 }
 
 function confirmPage() {
     location.href = "confirmation.html";
+}
+
+function clearCart() {
+    localStorage.removeItem('cart');
+    displayProductsIncart.innerHTML = `<p class="empty-cart">Votre panier est vide</p>`;
+    sectionInfosCart.style.display = "none";
+    continueShopping.style.display = "none";
+    confirmOrder.style.display = "none";
+    cartItems.innerHTML = "0";
+    cartItemsMobiles.innerHTML = "0";
+    showForm.style.display = "none";
 }
 
 // check all inputs in this function
