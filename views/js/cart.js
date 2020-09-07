@@ -1,7 +1,9 @@
+let itemsCart = JSON.parse(localStorage.getItem('cart'))
+
 document.addEventListener('DOMContentLoaded', () => {
-    //console.log('Chargé')
+    // we create a new instance of cart and execute the method displayProductsInCart
     let displayCart = new Cart()
-    displayCart.displayProductsInCart();
+    displayCart.displayProductsInCart()
 
     eventListeners()
 })
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class Cart {
     constructor() {
+        // DOM selectors
         this.cartItems = document.querySelector('.cart-items');
         this.cartItemsMobiles = document.querySelector('.cart-items-mobiles');
         this.showForm = document.querySelector('.show-form');
@@ -21,6 +24,7 @@ class Cart {
         this.continueShoppingBtn = document.querySelector('.btn-payment');
         this.formSubmitBtn = document.querySelector('.contact-form');
         this.sectionConfirm = document.querySelector('.section__confirm--bloc');
+        this.iconDelete = document.querySelector('.fa-trash-alt');
 
         // Data from form contact
         this.lastName = document.querySelector('#name');
@@ -31,9 +35,7 @@ class Cart {
     }
 
     displayProductsInCart() {
-        /*---Display products saved in localStorage---*/
-        let itemsCart = JSON.parse(localStorage.getItem('cart'));
-
+        // we get the cart from storage
         for (let i = 0; i < itemsCart.length; i++) {
             this.displayProductsIncart.innerHTML += ` 
             <article class="show-product">
@@ -45,41 +47,55 @@ class Cart {
                         <h3 class="name-product"> <a href="panier.html/?id=${itemsCart[i].id}">${itemsCart[i].name} </a></h3>
                     </div>
                     <div>
-                        <h3> ${itemsCart[i].price}€ x ${itemsCart[i].quantity}</h3>
+                        <i class="fas fa-chevron-up" data-id=${itemsCart[i].id}></i>
+                        <p class="item-amount">${itemsCart[i].quantity} x ${itemsCart[i].price}€</p>
+                        <i class="fas fa-chevron-down" data-id=${itemsCart[i].id}></i>
                     </div>
                 </div>
                 <div class="price-product">
-                    <h3>${this.calculateTotalPrice()}€</h3>
+                    <h3>${itemsCart[i].totalPrice}€</h3>
                 </div>
                 <div>
-                    <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-trash-alt" data-id="${itemsCart[i].id}"></i>
                 </div>
             </article>`;
+
         }
+        this.calculateTotalPrice()
     }
 
+    /* update the quantity of products in Cart
+    incrementeQuantity() {
+        console.log(1)
+    }
+
+    decrementeQuantity() {
+        console.log(-1)
+    }
+    */
+
     calculateTotalPrice() {
-        let itemsCart = JSON.parse(localStorage.getItem('cart'));
+        const cartTotal = document.querySelector('.cart-total-order')
         let totalPriceOrder = 0;
         for (let i = 0; i < itemsCart.length; i++) {
             totalPriceOrder += itemsCart[i].totalPrice;
         }
-        const cartTotal = document.querySelector('.cart-total');
-        cartTotal.innerHTML = totalPriceOrder;
 
+        cartTotal.innerHTML = totalPriceOrder
+        sessionStorage.setItem('totalPriceOrder', JSON.stringify(totalPriceOrder))
         return totalPriceOrder
     }
-
+    // When user click to submit form, execute ValidateForm
     formSubmit() {
         this.validateForm();
         if (this.formSubmitBtn.checkValidity() === false) {
-            this.requiredInput.innerHTML = "Merci de completer le formulaire!";
+            this.requiredInput.innerHTML = "Merci de completer le formulaire!"
             this.requiredInput.style.color = "red";
         } else {
             this.displayOrderResume()
         }
     }
-
+    //display order resume and hide form 
     displayOrderResume() {
         this.confirmOrder.innerHTML = `
         <h3>Résumé de la commande</h3>
@@ -94,19 +110,18 @@ class Cart {
         </div>`;
         this.showForm.style.display = "none";
         this.continueShoppingBtn.style.display = "none"
-        this.confirmOrderBtn.classList.remove('display-btn');
+        this.confirmOrderBtn.classList.remove('display-btn')
     }
-
+    // display form
     continueShopping() {
-        this.showForm.classList.remove('display-form');
-        this.continueShoppingBtn.style.display = 'none';
+        this.showForm.classList.remove('display-form')
+        this.continueShoppingBtn.style.display = 'none'
     }
 
     postObjectsContactProducts() {
         const urlOrder = "http://localhost:3000/api/cameras/order"
-        let itemsCart = JSON.parse(localStorage.getItem('cart'));
         // array products 
-        const products = [];
+        const products = []
 
         for (let i = 0; i < itemsCart.length; i++) {
             products.push(itemsCart[i].id)
@@ -139,7 +154,7 @@ class Cart {
                         sessionStorage.setItem('dataServer', JSON.stringify(dataServer))
                         console.log(dataServer)
                         if (response.status === 201) {
-                            setTimeout(this.confirmPage(), 2000);
+                            setTimeout(this.confirmPage(), 2000)
                         }
                     })
             })
@@ -147,7 +162,7 @@ class Cart {
     }
 
     confirmOrder() {
-        this.responseServer();
+        this.responseServer()
     }
 
     confirmPage() {
@@ -155,19 +170,21 @@ class Cart {
     }
 
     clearCart() {
-        localStorage.removeItem('cart');
-        this.displayProductsIncart.innerHTML = `<p class="empty-cart">Votre panier est vide</p>`;
-        this.sectionInfosCart.style.display = "none";
-        this.continueShoppingBtn.style.display = "none";
-        this.confirmOrder.style.display = "none";
-        this.cartItems.innerHTML = "0";
-        this.cartItemsMobiles.innerHTML = "0";
-        this.showForm.style.display = "none";
+        localStorage.removeItem('cart')
+        this.displayProductsIncart.innerHTML = `<p class="empty-cart">Votre panier est vide</p>`
+        this.sectionInfosCart.style.display = "none"
+        this.continueShoppingBtn.style.display = "none"
+        this.confirmOrder.style.display = "none"
+        this.cartItems.innerHTML = "0"
+        this.cartItemsMobiles.innerHTML = "0"
+        this.showForm.style.display = "none"
     }
 
-    deleteItemInCart() {
-        console.log('produits supprimé')
-    }
+  /*   deleteItemInCart() {
+        console.log('function delete product')
+        itemsCart = itemsCart.filter(item => item.id  !== itemsCart.id)
+    } */
+
 
     // check all inputs in this function
     validateForm() {
@@ -201,20 +218,30 @@ class Cart {
 
 function eventListeners() {
 
-    const btnClearCart = document.querySelector('.btn-clear-cart');
-    const deleteItemInCartIcon = document.querySelector('.fa-trash-alt');
-    const confirmOrderBtn = document.querySelector('#confirm-btn');
-    const formSubmitBtn = document.querySelector('.contact-form');
-    const continueShoppingBtn = document.querySelector('.btn-payment');
+    const btnClearCart = document.querySelector('.btn-clear-cart')
+    const deleteItemInCartIcon = document.querySelector('.fa-trash-alt')
+    const confirmOrderBtn = document.querySelector('#confirm-btn')
+    const formSubmitBtn = document.querySelector('.contact-form')
+    const continueShoppingBtn = document.querySelector('.btn-payment')
+    const chevronUp = document.querySelector('.fa-chevron-up')
+    const chevronDown = document.querySelector('.fa-chevron-down')
     // new instance off cart
     const cart = new Cart()
+
+   /*  chevronUp.addEventListener('click', () => {
+        cart.incrementeQuantity()
+    })
+
+    chevronDown.addEventListener('click', () => {
+        cart.decrementeQuantity()
+    }) */
 
     // remove all products in cart 
     btnClearCart.addEventListener('click', () => {
         cart.clearCart();
     })
 
-    deleteItemInCartIcon.addEventListener('click', () => {
+    deleteItemInCartIcon.addEventListener('click', (e) => {
         cart.deleteItemInCart()
     })
 

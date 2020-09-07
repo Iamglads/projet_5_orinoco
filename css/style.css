@@ -313,6 +313,14 @@ select, #quantity {
 .section__productsInCart .products__cart--list .show-product .show-product-infos .name-product {
   color: #cb7d55;
 }
+.section__productsInCart .products__cart--list .show-product .show-product-infos .fa-chevron-up, .section__productsInCart .products__cart--list .show-product .show-product-infos .fa-chevron-down {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section__productsInCart .products__cart--list .show-product .show-product-infos .fa-chevron-up:hover, .section__productsInCart .products__cart--list .show-product .show-product-infos .fa-chevron-down:hover {
+  color: #cb7d55;
+}
 .section__productsInCart .products__cart--list .show-product .price-product {
   width: 20%;
   display: flex;

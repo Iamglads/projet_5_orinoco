@@ -32,6 +32,14 @@
         .name-product {
           color: $third-color;
         }
+        .fa-chevron-up, .fa-chevron-down{
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          &:hover{
+            color: $third-color;
+          }
+        }
       }
       .price-product{
         width: 20%;

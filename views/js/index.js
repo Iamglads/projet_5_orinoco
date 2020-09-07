@@ -1,24 +1,32 @@
+import { getRessource } from './functions.js'
+const sectionProducts = document.querySelector('.productsJs')
 
-import { getRessource } from './functions.js';
-const productsDOM = document.querySelector('.productsJs');
-/*-------------------------------------------------------
-   get all produts rom API and display in main page
-    ----------------------------------------------------*/
 
+//get all produts from API and display in main page
 class Products {
-    getCameras() {
-        getRessource()
-            .then((allCameras) => {
-                this.displayCameras(allCameras);
-            })
-            // if promise is reject log an error. 
-            .catch(error => { console.log(error) })
+    // in this method we get the result from getRessource with then to display all cameras or catch errors
+
+
+    async getAllCamerasFromApi() {
+        try {
+            let cameras = await getRessource();
+            if (cameras.length > 0) {
+                this.displayCameras(cameras)
+            } else {
+                alert('error')
+            }
+
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
-    // display all products in home page
+
+    // display all products available in API in home page
     displayCameras(cameras) {
         cameras.map((camera) => {
-            // nous recuperons les propriéte de notre objet que nous mettons dans notre ul
-            productsDOM.innerHTML += `
+            // for each camera, we passed variables in this template string with html code
+            sectionProducts.innerHTML += `
             <li class="show-product">
                 <div class="products-img">
                     <img src="${camera.imageUrl}" alt="image-${camera.name}" class="img-cameras">
@@ -29,16 +37,18 @@ class Products {
                     <h3> ${camera.price / 100} €</h3>
                     <a href="/views/pages/produit.html?id=${camera._id}" class="btn add-to-cart"> Personnaliser</a>
                 </div>
-            </li>`;
+            </li>`
         })
     }
 }
+
+
 // Execute when Dom loaded
 document.addEventListener("DOMContentLoaded", () => {
-    // we create a new instance of Products Class and execute the method getCamera
+    // we create a new instance of Products Class and execute the method getCameras
     const products = new Products();
-    products.getCameras()
-});
+    products.getAllCamerasFromApi()
+})
 
 
 
