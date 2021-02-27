@@ -8,31 +8,29 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@300&family=Permanent+Marker&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Permanent+Marker&display=swap"
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <!-- CSS-->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- favicon-->
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <!-- title-->
-    <title>Accueil | Confirmation de votre commande</title>
+    <title>Orinoco| Votre produit</title>
 </head>
 
 <body>
     <main>
+        <!--nav-->
         <nav class="navbar navbar-expand-lg navbar-light menu-nav ">
-            <a href="/index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
+            <a href="../../index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
             <ul class="nav-link">
                 <li> <a href="/index.html">Produits</a></li>
                 <li> <a href="contact.html">Contact</a></li>
@@ -42,6 +40,7 @@
                 </div>
             </ul>
         </nav>
+        <!--nav-->
          <!--nav mobiles-->
          <nav class="sidebar">
             <ul class="nav-link">
@@ -50,36 +49,45 @@
                     <a href="/index.html"><img src="/images/orinoco.png" alt="logo_orinoco" class="logo"></a>
                 </li>
                 <li class="nav-icon-cart">
-                    <a href="/views/pages/panier.html"><i class="fas fa-cart-plus"></i></a>
+                    <a href="/views/Cart/panier.html"><i class="fas fa-cart-plus"></i></a>
                     <span class="cart-items cart-items-mobiles">0</span>
                 </li>
             </ul>
         </nav>
         <!--nav mobiles-->
+        <!--header-->
         <header>
-            <div class="header-bloc">
-                <h1>Confirmation</h1>
-            </div>
+            <h1> Personnaliser</h1>
         </header>
         <div class="divider">
             <div class="span-divider"></div>
         </div>
-        <section class="section__confirm">
-            <div class="section__confirm--bloc">
-                <!-- AJOUTER ICI LE MESSAGE DE VALIDATION DE COMMANDE-->
+        <!--header-->
+        <!--section show product-->
+        <section class="section__showProduct">
+            <div class="display-product ">
+                <div class="personalizeJs">
+                    <!--display products and personalize -->
+                </div>
+                <button id="" class="btn add-to-cart">
+                    Ajouté au panier
+                </button>
             </div>
         </section>
+        <!--section show product end-->
+
         <!-- Footer -->
         <footer class="page-footer font-small">
             <!--Display from JS-->
         </footer>
         <!-- Footer End -->
     </main>
+
     <!--SCRIPTS-->
-    <script src="../js/displayNav.js"></script>
-    <script  src="../js/productInCart.js"></script>
-    <script src="../js/displayFooter.js"></script>
-    <script  src="../js/confirm.js"></script>
+    <script src="../displayNav.js"></script>
+    <script src="../displayFooter.js"></script>
+    <script type="module" src="../Product/product.js"></script>
+    <script src="../Cart/productInCart.js"></script>
 </body>
 
 </html>

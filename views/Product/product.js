@@ -1,4 +1,4 @@
-import { getOneCameraById } from './functions.js'
+import { getOneCameraById } from '../API/callApi.js'
 
 
 // this variable will be used to store the products objects in the array and we will save this array in localStorage
@@ -102,6 +102,7 @@ class PersonalizeCamera {
 
     // disable button when this product is adding
     disabledBtnAddToCart() {
+        // trouver si l'identifiant du produit affiché correspond à unn identifiant d'un produit existant dans le tableau
         this.addToCart.innerText = "Ajouté"
         this.addToCart.disabled = true
     }

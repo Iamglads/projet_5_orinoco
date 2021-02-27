@@ -24,5 +24,3 @@ console.log(dataServer);
 console.log('Montant total: ' + totalPriceOrder + '€');
 
 
-
-

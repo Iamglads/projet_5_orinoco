@@ -1,11 +1,9 @@
-import { getRessource } from './functions.js'
+import { getRessource } from '../API/callApi.js'
 const sectionProducts = document.querySelector('.productsJs')
-
 
 //get all produts from API and display in main page
 class Products {
     // in this method we get the result from getRessource with then to display all cameras or catch errors
-
 
     async getAllCamerasFromApi() {
         try {
@@ -13,9 +11,8 @@ class Products {
             if (cameras.length > 0) {
                 this.displayCameras(cameras)
             } else {
-                alert('error')
+                alert('Error')
             }
-
         }
         catch (error) {
             console.log(error)
@@ -35,7 +32,7 @@ class Products {
                     <h2> ${camera.name}</h2>
                     <p> ${camera.description}</p>
                     <h3> ${camera.price / 100} €</h3>
-                    <a href="/views/pages/produit.html?id=${camera._id}" class="btn add-to-cart"> Personnaliser</a>
+                    <a href="/views/Product/produit.html?id=${camera._id}" class="btn add-to-cart"> Personnaliser</a>
                 </div>
             </li>`
         })

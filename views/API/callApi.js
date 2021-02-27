@@ -1,4 +1,4 @@
-export const url = "http://localhost:3000/api/cameras";
+export const url = "http://localhost:3001/api/cameras";
 
 // get all products (cameras) with fetch API
 export async function getRessource() {
@@ -8,6 +8,7 @@ export async function getRessource() {
         return cameras
     }
     catch (error) {
+        // en cas d'erreurs retourner un tableau vide
         return []
     }
 }
@@ -16,7 +17,6 @@ export async function getRessource() {
 export async function getOneCameraById() {
     try {
         let params = new URLSearchParams(window.location.search);
-        //params.has('id');
         let id = params.get('id');
 
         let res = await fetch(url + "/" + id);
@@ -27,3 +27,7 @@ export async function getOneCameraById() {
         console.log(error)
     }
 }
+
+
+
+
